@@ -12,6 +12,8 @@
 
 ```sudo apt install python3 git curl jq```
 
+У вас должен быть [обновленный](https://discord.com/channels/490367152054992913/708278589031710761/750253047145431110) [nearup](https://github.com/near/nearup/tree/nearup_v2)
+
 ### Установка nearcore-updater
 
 ```git clone https://github.com/savelev1/nearcore-updater.git /home/near/nearcore-updater```
@@ -58,6 +60,8 @@ nearcore-updater установится в директорию */home/near/near
 ```sudo apt update```
 
 ```sudo apt install python3 git curl jq```
+
+You should also have [updated](https://discord.com/channels/490367152054992913/708278589031710761/750253047145431110) [nearup](https://github.com/near/nearup/tree/nearup_v2)
 
 ### Installation of nearcore-updater
 
