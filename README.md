@@ -18,11 +18,11 @@
 
 nearcore-updater установится в директорию */home/near/nearcore-updater*. Вы можете ее изменить на свое усмотрение.
 
-**Установка запуска скрипта с интервалом 1 час**
+**Настройка запуска nearcore-updater с интервалом 1 час**
 
 ```crontab -e```
 
-В открывшемся окне редактирования Crontab добавьте новую строку в конце:
+В открывшемся окне редактирования Crontab добавьте в конец новую строку:
 
 ```0 */1 * * * export NODE_ENV=betanet && /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py betanet /home/near/nearcore > /tmp/nearcore-updater-cron.log 2>&1```
 
