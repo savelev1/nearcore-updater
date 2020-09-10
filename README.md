@@ -6,19 +6,19 @@
 
 ## Установка
 
-**Установка зависимостей**
+### Установка зависимостей
 
 ```sudo apt update```
 
 ```sudo apt install python3 git curl jq```
 
-**Установка nearcore-updater**
+### Установка nearcore-updater
 
 ```git clone https://github.com/savelev1/nearcore-updater.git /home/near/nearcore-updater```
 
 nearcore-updater установится в директорию */home/near/nearcore-updater*. Вы можете ее изменить на свое усмотрение.
 
-**Настройка запуска nearcore-updater с интервалом 1 час**
+### Настройка запуска nearcore-updater с интервалом 1 час
 
 ```crontab -e```
 
@@ -26,13 +26,13 @@ nearcore-updater установится в директорию */home/near/near
 
 ```0 */1 * * * export NODE_ENV=betanet && /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py betanet /home/near/nearcore > /tmp/nearcore-updater-cron.log 2>&1```
 
-**Установка завершена**
+**✅Установка завершена**
 
 Вы можете запустить скрипт вручную, чтобы убедится что все работает:
 
 ```python3 /home/near/nearcore-updater/nearcore-updater.py betanet /home/near/nearcore```
 
-**Описание параметров запуска nearcore-updater**
+### Описание параметров запуска nearcore-updater
 
 Скрипт имеет 3 параметра для запуска:
 
@@ -53,19 +53,19 @@ nearcore-updater установится в директорию */home/near/near
 
 ## Installation
 
-**Installation of Dependency**
+### Installation of Dependency
 
 ```sudo apt update```
 
 ```sudo apt install python3 git curl jq```
 
-**Installation of nearcore-updater**
+### Installation of nearcore-updater
 
 ```git clone https://github.com/savelev1/nearcore-updater.git /home/near/nearcore-updater```
 
 nearcore-updater will install in the directory */home/near/nearcore-updater*. You can change it at your discretion.
 
-**Setting the start of nearcore-updater at 1 hour intervals**
+### Setting the start of nearcore-updater at 1 hour intervals
 
 ```crontab -e```
 
@@ -73,13 +73,13 @@ In the Crontab edit window that opens add a new line to the end:
 
 ```0 */1 * * * export NODE_ENV=betanet && /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py betanet /home/near/nearcore > /tmp/nearcore-updater-cron.log 2>&1```
 
-**Installation completed**
+**✅Installation completed**
 
 You can run the script manually to make sure that everything works:
 
 ```python3 /home/near/nearcore-updater/nearcore-updater.py betanet /home/near/nearcore```
 
-**Description of nearcore-updater launch parameters**
+### Description of nearcore-updater launch parameters
 
 The script has 3 parameters to run:
 
