@@ -14,13 +14,9 @@
 
 **Установка nearcore-updater**
 
-Создайте директорию где будет размещатся скрипт и перейдите в нее:
+```git clone https://github.com/savelev1/nearcore-updater.git /home/near/nearcore-updater```
 
-```mkdir /home/near && cd /home/near```
-
-Установите nearcore-updater:
-
-```git clone https://github.com/savelev1/nearcore-updater.git```
+nearcore-updater установится в директорию */home/near/nearcore-updater*. Вы можете ее изменить на свое усмотрение.
 
 **Установка запуска скрипта с интервалом 1 час**
 
