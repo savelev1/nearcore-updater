@@ -64,7 +64,11 @@ printAndLog(f'Start update to {currentVersion}')
 os.system(f'rm -rf {nearcoreDir}.backup');
 os.system(f'mv {nearcoreDir} {nearcoreDir}.backup');
 os.system(f'git clone -b {currentVersion} https://github.com/nearprotocol/nearcore.git {nearcoreDir}');
-os.system(f'cd {nearcoreDir} && make release');
+makeReleaseExitCode = os.system(f'cd {nearcoreDir} && make release');
+if makeReleaseExitCode != 0:
+    printAndLog('Build failed')
+    plexit()
+    
 os.system('nearup stop');
 os.system(f'nearup localnet --binary-path {nearcoreDir}/target/release');
 
