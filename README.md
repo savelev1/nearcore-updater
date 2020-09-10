@@ -2,7 +2,7 @@
 
 ## Описание
 
-**nearcore-updater** это скрипт, который раз в час проверяет обновления [nearcore](https://github.com/nearprotocol/nearcore). При наличии обновлений, скачивается новая версия [nearcore](https://github.com/nearprotocol/nearcore) и запускаются тесты. Если тесты завершились успешно, локальный nearcore обновляется на новую версию.
+**nearcore-updater** это скрипт, который с заданным интервалом проверяет обновления [nearcore](https://github.com/nearprotocol/nearcore). При наличии обновлений, скачивается новая версия [nearcore](https://github.com/nearprotocol/nearcore) и запускаются тесты. Если тесты завершились успешно, локальный nearcore обновляется на новую версию.
 
 ## Установка
 
@@ -44,4 +44,4 @@ nearcore-updater установится в директорию */home/near/near
 
 Например, для сети testnet с расположением nearcore в /home/near/nearcore и с выключенными логами:
 
-```0 */1 * * * export NODE_ENV=betanet && /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py testnet /home/near/nearcore False > /tmp/nearcore-updater-cron.log 2>&1```
+```0 */1 * * * export NODE_ENV=testnet && /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py testnet /home/near/nearcore False > /tmp/nearcore-updater-cron.log 2>&1```
