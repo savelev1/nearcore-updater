@@ -1,6 +1,6 @@
 # nearcore-updater
 
-## Описание
+## Описание [RU]
 
 **nearcore-updater** это скрипт, который с заданным интервалом проверяет обновления [nearcore](https://github.com/nearprotocol/nearcore). При наличии обновлений, скачивается новая версия [nearcore](https://github.com/nearprotocol/nearcore) и запускаются тесты. Если тесты завершились успешно, локальный nearcore обновляется на новую версию.
 
@@ -26,7 +26,7 @@ nearcore-updater установится в директорию */home/near/near
 
 ```0 */1 * * * export NODE_ENV=betanet && /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py betanet /home/near/nearcore > /tmp/nearcore-updater-cron.log 2>&1```
 
-**На этом этапе установка завершена**
+**Установка завершена**
 
 Вы можете запустить скрипт вручную, чтобы убедится что все работает:
 
@@ -34,7 +34,7 @@ nearcore-updater установится в директорию */home/near/near
 
 **Описание параметров запуска nearcore-updater**
 
-Скрипт имеет 3 параметра для запуска
+Скрипт имеет 3 параметра для запуска:
 
 ```<NETWORK>``` - название сети блокчейна **(обязательный)**
 
@@ -43,5 +43,52 @@ nearcore-updater установится в директорию */home/near/near
 ```<ENABLE_LOG>``` - включить ли запись логов в файл nearcore-updater.log (необязательный, по умолчанию True)
 
 Например, для сети testnet с расположением nearcore в /home/near/nearcore и с выключенными логами:
+
+```0 */1 * * * export NODE_ENV=testnet && /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py testnet /home/near/nearcore False > /tmp/nearcore-updater-cron.log 2>&1```
+
+
+## Description [EN]
+
+**nearcore-updater** is a script that checks for updates at a specified interval [nearcore](https://github.com/nearprotocol/nearcore). If there are updates, a new version of [nearcore](https://github.com/nearprotocol/nearcore) is downloaded and tests are performed. If the tests are successful, the local nearcore is updated to the new version.
+
+## Installation
+
+**Installation of Dependency**
+
+```sudo apt update```
+
+```sudo apt install python3 git curl jq```
+
+**Installation of nearcore-updater**
+
+```git clone https://github.com/savelev1/nearcore-updater.git /home/near/nearcore-updater```
+
+nearcore-updater will install in the directory */home/near/nearcore-updater*. You can change it at your discretion.
+
+**Setting the start of nearcore-updater at 1 hour intervals**
+
+```crontab -e```
+
+In the Crontab edit window that opens add a new line to the end:
+
+```0 */1 * * * export NODE_ENV=betanet && /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py betanet /home/near/nearcore > /tmp/nearcore-updater-cron.log 2>&1```
+
+**Installation completed**
+
+You can run the script manually to make sure that everything works:
+
+```python3 /home/near/nearcore-updater/nearcore-updater.py betanet /home/near/nearcore```
+
+**Description of nearcore-updater launch parameters**
+
+The script has 3 parameters to run:
+
+```<NETWORK>``` - network name of the blockchain **(required)**
+
+```<NEARCORE_DIR>``` - nearcore installation directory **(required)**
+
+```<ENABLE_LOG>``` - enable logging in the nearcore-updater.log file (optional, by default True)
+
+For example, for a testnet network with nearcore location in /home/near/nearcore and with logs disabled:
 
 ```0 */1 * * * export NODE_ENV=testnet && /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py testnet /home/near/nearcore False > /tmp/nearcore-updater-cron.log 2>&1```
