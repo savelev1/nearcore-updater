@@ -70,7 +70,7 @@ if makeReleaseExitCode != 0:
     plexit()
     
 os.system('nearup stop');
-os.system(f'nearup localnet --binary-path {nearcoreDir}/target/release');
+os.system(f'nearup run localnet --binary-path {nearcoreDir}/target/release');
 
 printAndLog('Run tests')
 
@@ -83,10 +83,10 @@ for count in range(4):
         printAndLog(f"Node {count} don't works. Test failed.")
         os.system(f'mv {nearcoreDir}.backup {nearcoreDir}')
         os.system('nearup stop')
-        os.system(f'nearup {network} --binary-path {nearcoreDir}/target/release/ --nodocker')
+        os.system(f'nearup run {network} --binary-path {nearcoreDir}/target/release/ --nodocker')
         plexit()
 
 printAndLog("Tests completed")
 os.system('nearup stop')
-os.system(f'nearup {network} --binary-path {nearcoreDir}/target/release/ --nodocker')
+os.system(f'nearup run {network} --binary-path {nearcoreDir}/target/release/ --nodocker')
 printAndLog(f"Node updated. Current version {currentVersion} ({network})\r\n\r\n")
