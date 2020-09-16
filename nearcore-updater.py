@@ -44,6 +44,8 @@ if len(sys.argv) >= 4:
 network = sys.argv[1]
 nearcoreDir = sys.argv[2]
 
+os.environ["NODE_ENV"] = network
+
 printAndLog("Checking for updates")
 
 currentVersion = os.popen(f'curl -s https://rpc.{network}.near.org/status | jq .version.version').read()
