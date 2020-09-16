@@ -34,12 +34,6 @@ nearcore-updater установится в директорию */home/near/near
 
 ```python3 /home/near/nearcore-updater/nearcore-updater.py betanet /home/near/nearcore```
 
-### Обновление nearcore-updater
-
-Перейдите в директорию расположения скрипта и вытяните обновления:
-
-```cd /home/near/nearcore-updater && git pull```
-
 ### Описание параметров запуска nearcore-updater
 
 Скрипт имеет 3 параметра для запуска:
@@ -54,6 +48,11 @@ nearcore-updater установится в директорию */home/near/near
 
 ```0 */1 * * * /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py testnet /home/near/nearcore False > /tmp/nearcore-updater-cron.log 2>&1```
 
+### Обновление nearcore-updater
+
+Перейдите в директорию расположения скрипта и вытяните обновления:
+
+```cd /home/near/nearcore-updater && git pull```
 
 ## Description [EN]
 
@@ -89,12 +88,6 @@ You can run the script manually to make sure that everything works:
 
 ```python3 /home/near/nearcore-updater/nearcore-updater.py betanet /home/near/nearcore```
 
-### Update nearcore-updater
-
-Go to the script directory and pull out the updates:
-
-```cd /home/near/nearcore-updater && git pull```
-
 ### Description of nearcore-updater launch parameters
 
 The script has 3 parameters to run:
@@ -108,3 +101,9 @@ The script has 3 parameters to run:
 For example, for a testnet network with nearcore location in /home/near/nearcore and with logs disabled:
 
 ```0 */1 * * * /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py testnet /home/near/nearcore False > /tmp/nearcore-updater-cron.log 2>&1```
+
+### Update nearcore-updater
+
+Go to the script directory and pull out the updates:
+
+```cd /home/near/nearcore-updater && git pull```
