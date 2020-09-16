@@ -34,6 +34,12 @@ nearcore-updater установится в директорию */home/near/near
 
 ```python3 /home/near/nearcore-updater/nearcore-updater.py betanet /home/near/nearcore```
 
+### Обновление nearcore-updater
+
+Перейдите в директорию расположения скрипта и вытяните обновления:
+
+```cd /home/near/nearcore-updater && git pull```
+
 ### Описание параметров запуска nearcore-updater
 
 Скрипт имеет 3 параметра для запуска:
@@ -82,6 +88,12 @@ In the Crontab edit window that opens add a new line to the end:
 You can run the script manually to make sure that everything works:
 
 ```python3 /home/near/nearcore-updater/nearcore-updater.py betanet /home/near/nearcore```
+
+### Update nearcore-updater
+
+Go to the script directory and pull out the updates:
+
+```cd /home/near/nearcore-updater && git pull```
 
 ### Description of nearcore-updater launch parameters
 
