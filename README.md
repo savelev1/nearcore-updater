@@ -26,7 +26,7 @@ nearcore-updater установится в директорию */home/near/near
 
 В открывшемся окне редактирования Crontab добавьте в конец новую строку:
 
-```0 */1 * * * export NODE_ENV=betanet && /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py betanet /home/near/nearcore > /tmp/nearcore-updater-cron.log 2>&1```
+```0 */1 * * * /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py betanet /home/near/nearcore > /tmp/nearcore-updater-cron.log 2>&1```
 
 **✅Установка завершена**
 
@@ -46,7 +46,7 @@ nearcore-updater установится в директорию */home/near/near
 
 Например, для сети testnet с расположением nearcore в /home/near/nearcore и с выключенными логами:
 
-```0 */1 * * * export NODE_ENV=testnet && /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py testnet /home/near/nearcore False > /tmp/nearcore-updater-cron.log 2>&1```
+```0 */1 * * * /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py testnet /home/near/nearcore False > /tmp/nearcore-updater-cron.log 2>&1```
 
 
 ## Description [EN]
@@ -75,7 +75,7 @@ nearcore-updater will install in the directory */home/near/nearcore-updater*. Yo
 
 In the Crontab edit window that opens add a new line to the end:
 
-```0 */1 * * * export NODE_ENV=betanet && /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py betanet /home/near/nearcore > /tmp/nearcore-updater-cron.log 2>&1```
+```0 */1 * * * /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py betanet /home/near/nearcore > /tmp/nearcore-updater-cron.log 2>&1```
 
 **✅Installation completed**
 
@@ -95,4 +95,4 @@ The script has 3 parameters to run:
 
 For example, for a testnet network with nearcore location in /home/near/nearcore and with logs disabled:
 
-```0 */1 * * * export NODE_ENV=testnet && /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py testnet /home/near/nearcore False > /tmp/nearcore-updater-cron.log 2>&1```
+```0 */1 * * * /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py testnet /home/near/nearcore False > /tmp/nearcore-updater-cron.log 2>&1```
