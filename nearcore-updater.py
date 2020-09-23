@@ -41,10 +41,13 @@ if len(sys.argv) < 3:
 if len(sys.argv) >= 4:
     enableLog = bool(sys.argv[3])
 
+# add nearup PATH 
+os.environ["PATH"] = f'{os.environ["HOME"]}/.local/bin:{os.environ["PATH"]}'
+# add cargo PATH 
+os.environ["PATH"] = f'{os.environ["HOME"]}/.cargo/bin:{os.environ["PATH"]}'
+
 network = sys.argv[1]
 nearcoreDir = sys.argv[2]
-
-os.environ["NODE_ENV"] = network
 
 printAndLog("Checking for updates")
 
@@ -73,11 +76,9 @@ if makeReleaseExitCode != 0:
     
 os.system('nearup stop');
 os.system(f'nearup run localnet --binary-path {nearcoreDir}/target/release');
-
 printAndLog('Run tests')
-
+rpcVersion = os.popen(f'curl -s https://rpc.{network}.near.org/status | jq .version').read()
 for count in range(4):
-    rpcVersion = os.popen(f'curl -s https://rpc.{network}.near.org/status | jq .version').read()
     localVersion = os.popen(f'curl -s http://127.0.0.1:303{count}/status | jq .version').read()
     if rpcVersion == localVersion:
         printAndLog(f"Node {count} works")
@@ -85,10 +86,10 @@ for count in range(4):
         printAndLog(f"Node {count} don't works. Test failed.")
         os.system(f'mv {nearcoreDir}.backup {nearcoreDir}')
         os.system('nearup stop')
-        os.system(f'nearup run {network} --binary-path {nearcoreDir}/target/release/ --nodocker')
+        os.system(f'nearup run {network} --binary-path {nearcoreDir}/target/release/')
         plexit()
 
 printAndLog("Tests completed")
 os.system('nearup stop')
-os.system(f'nearup run {network} --binary-path {nearcoreDir}/target/release/ --nodocker')
+os.system(f'nearup run {network} --binary-path {nearcoreDir}/target/release/')
 printAndLog(f"Node updated. Current version {currentVersion} ({network})\r\n\r\n")
