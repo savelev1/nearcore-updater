@@ -16,9 +16,9 @@
 
 ### Установка nearcore-updater
 
-```git clone https://github.com/savelev1/nearcore-updater.git /home/near/nearcore-updater```
+```git clone https://github.com/savelev1/nearcore-updater.git $HOME/nearcore-updater```
 
-nearcore-updater установится в директорию */home/near/nearcore-updater*. Вы можете ее изменить на свое усмотрение.
+nearcore-updater установится в директорию *$HOME/nearcore-updater*. Вы можете ее изменить на свое усмотрение.
 
 ### Настройка запуска nearcore-updater с интервалом 1 час
 
@@ -26,13 +26,13 @@ nearcore-updater установится в директорию */home/near/near
 
 В открывшемся окне редактирования Crontab добавьте в конец новую строку:
 
-```0 */1 * * * /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py betanet /home/near/nearcore > /tmp/nearcore-updater-cron.log 2>&1```
+```0 */1 * * * /usr/bin/python3 $HOME/nearcore-updater/nearcore-updater.py betanet $HOME/nearcore > /tmp/nearcore-updater-cron.log 2>&1```
 
 **✅Установка завершена**
 
 Вы можете запустить скрипт вручную, чтобы убедится что все работает:
 
-```python3 /home/near/nearcore-updater/nearcore-updater.py betanet /home/near/nearcore```
+```python3 $HOME/nearcore-updater/nearcore-updater.py betanet $HOME/nearcore```
 
 ### Описание параметров запуска nearcore-updater
 
@@ -44,15 +44,15 @@ nearcore-updater установится в директорию */home/near/near
 
 ```<ENABLE_LOG>``` - включить ли запись логов в файл nearcore-updater.log (необязательный, по умолчанию True)
 
-Например, для сети testnet с расположением nearcore в /home/near/nearcore и с выключенными логами:
+Например, для сети testnet с расположением nearcore в $HOME/nearcore и с выключенными логами:
 
-```0 */1 * * * /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py testnet /home/near/nearcore False > /tmp/nearcore-updater-cron.log 2>&1```
+```0 */1 * * * /usr/bin/python3 $HOME/nearcore-updater/nearcore-updater.py testnet $HOME/nearcore False > /tmp/nearcore-updater-cron.log 2>&1```
 
 ### Обновление nearcore-updater
 
 Перейдите в директорию расположения скрипта и вытяните обновления:
 
-```cd /home/near/nearcore-updater && git pull```
+```cd $HOME/nearcore-updater && git pull```
 
 ## Description [EN]
 
@@ -70,9 +70,9 @@ You should also have [updated](https://discord.com/channels/490367152054992913/7
 
 ### Installation of nearcore-updater
 
-```git clone https://github.com/savelev1/nearcore-updater.git /home/near/nearcore-updater```
+```git clone https://github.com/savelev1/nearcore-updater.git $HOME/nearcore-updater```
 
-nearcore-updater will install in the directory */home/near/nearcore-updater*. You can change it at your discretion.
+nearcore-updater will install in the directory *$HOME/nearcore-updater*. You can change it at your discretion.
 
 ### Setting the start of nearcore-updater at 1 hour intervals
 
@@ -80,13 +80,13 @@ nearcore-updater will install in the directory */home/near/nearcore-updater*. Yo
 
 In the Crontab edit window that opens add a new line to the end:
 
-```0 */1 * * * /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py betanet /home/near/nearcore > /tmp/nearcore-updater-cron.log 2>&1```
+```0 */1 * * * /usr/bin/python3 $HOME/nearcore-updater/nearcore-updater.py betanet $HOME/nearcore > /tmp/nearcore-updater-cron.log 2>&1```
 
 **✅Installation completed**
 
 You can run the script manually to make sure that everything works:
 
-```python3 /home/near/nearcore-updater/nearcore-updater.py betanet /home/near/nearcore```
+```python3 $HOME/nearcore-updater/nearcore-updater.py betanet $HOME/nearcore```
 
 ### Description of nearcore-updater launch parameters
 
@@ -98,12 +98,12 @@ The script has 3 parameters to run:
 
 ```<ENABLE_LOG>``` - enable logging in the nearcore-updater.log file (optional, by default True)
 
-For example, for a testnet network with nearcore location in /home/near/nearcore and with logs disabled:
+For example, for a testnet network with nearcore location in $HOME/nearcore and with logs disabled:
 
-```0 */1 * * * /usr/bin/python3 /home/near/nearcore-updater/nearcore-updater.py testnet /home/near/nearcore False > /tmp/nearcore-updater-cron.log 2>&1```
+```0 */1 * * * /usr/bin/python3 $HOME/nearcore-updater/nearcore-updater.py testnet $HOME/nearcore False > /tmp/nearcore-updater-cron.log 2>&1```
 
 ### Update nearcore-updater
 
 Go to the script directory and pull out the updates:
 
-```cd /home/near/nearcore-updater && git pull```
+```cd $HOME/nearcore-updater && git pull```
